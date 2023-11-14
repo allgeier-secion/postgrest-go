@@ -351,12 +351,6 @@ func (b *SelectRequestBuilder) Range(from, to int) *SelectRequestBuilder {
 	return b
 }
 
-// SingleRow sets the single row behavior for the SELECT request.
-func (b *SelectRequestBuilder) SingleRow() *SelectRequestBuilder {
-	b.params.Set("single-row", "true")
-	return b
-}
-
 // OnlyPayload sets the only payload behavior for the SELECT request.
 func (b *SelectRequestBuilder) OnlyPayload() *SelectRequestBuilder {
 	b.params.Set("only-payload", "true")
@@ -369,8 +363,8 @@ func (b *SelectRequestBuilder) WithoutCount() *SelectRequestBuilder {
 	return b
 }
 
-// SingleValue sets the single value behavior for the SELECT request.
-func (b *SelectRequestBuilder) SingleValue() *SelectRequestBuilder {
-	b.params.Set("single-value", "true")
+// Single sets the single behavior for the SELECT request.
+func (b *SelectRequestBuilder) Single() *SelectRequestBuilder {
+	b.header.Set("Accept", "application/vnd.pgrst.object+json")
 	return b
 }
