@@ -363,8 +363,8 @@ func (b *SelectRequestBuilder) WithoutCount() *SelectRequestBuilder {
 	return b
 }
 
+// Single sets the single behavior for the SELECT request.
 func (b *SelectRequestBuilder) Single() *SelectRequestBuilder {
 	b.header.Set("Accept", "application/vnd.pgrst.object+json")
-
 	return b
 }
